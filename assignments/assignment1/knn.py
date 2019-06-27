@@ -55,7 +55,10 @@ class KNN:
         for i_test in range(num_test):
             for i_train in range(num_train):
                 # TODO: Fill dists[i_test][i_train]
-                pass
+                #pass
+                #dists[i_test][i_train] = np.linalg.norm(X[i_test] - self.train_X[i_train])
+                dists[i_test][i_train] = np.sum(np.abs(X[i_test] - self.train_X[i_train]))
+        return dists
 
     def compute_distances_one_loop(self, X):
         '''
